@@ -22,7 +22,7 @@ class Casa extends Model
      * @var array
      */
     protected $fillable = ['tblpersona_id', 'direccion', 'barrio'];
-
+--
     public function persona()
     {
         return $this->belongsTo(Persona::class);
