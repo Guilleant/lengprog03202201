@@ -15,7 +15,8 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('persona.index') }}">Personas</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="{{ route('formapago.index') }}">Formas Pago</a>
+            <a class="dropdown-item" href="{{ route('casa.index') }}">Casas</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>

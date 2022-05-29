@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Casa extends Model
 {
     use HasFactory;
+    use softDeletes;
 
     /**
      * The table associated with the model.
@@ -22,9 +24,14 @@ class Casa extends Model
      * @var array
      */
     protected $fillable = ['tblpersona_id', 'direccion', 'barrio'];
---
+
     public function persona()
     {
-        return $this->belongsTo(Persona::class);
+        return $this->belongsTo(Persona::class, 'tblpersona_id');
+    }
+
+    public function formapago()
+    {
+        return $this->belongsTo(FormaPago::class, 'tblformapago_id');
     }
 }

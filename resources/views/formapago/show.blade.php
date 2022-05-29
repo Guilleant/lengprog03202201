@@ -1,57 +1,51 @@
 @extends('layouts.principal')
 
+@section('title')
+    Mostrando personas
+@endsection
+
 @section('navbar')
     @include('layouts.navbar')
 @endsection
 
 @section('content')
-
     <div class="card" style="width: 100%;">
         <div class="card-body">
-            <h5 class="card-title">Crear Personas</h5>
-
-            <form action="{{ route('persona.store') }}" method="POST">
-                @csrf
-
+        <h5 class="card-title">Mostrando</h5>
+            <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <label>Nro Identificacion</label>
-                        <input name="nroIdentificacion" type="text" class="form-control"/>
+                        <input type="text" class="form-control" value="{{ $persona->NroIdentificacion }}" disabled/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <label>Apellidos</label>
-                        <input name="apellidos" type="text" class="form-control" />
+                        <input type="text" class="form-control" value="{{ $persona->apellidos }}" disabled/>
                     </div>
 
                     <div class="col-md-6">
                         <label>Nombres</label>
-                        <input name="nombres" type="text" class="form-control"/>
+                        <input type="text" class="form-control" value="{{ $persona->nombres }}" disabled/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <label>Teléfono</label>
-                        <input name="telefono" type="text" class="form-control"/>
+                        <input type="text" class="form-control" value="{{ $persona->telefono }}" disabled/>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary mt-5">Guardar</button>
-                        <a href="{{ route('persona.index') }}" class="btn btn-secondary mt-5">Cancelar</a>
-                    </div>
-                </div>
-            </form>
+                <a href="{{ route('persona.index') }}" class="btn btn-primary mt-5">Regresar</a>
+
+            </div>
         </div>
-  </div>
-
-
+    </div>
 @endsection
 
 @section('scriptsnavbar')
-
+    @include('layouts.scriptsnavbar')
 @endsection

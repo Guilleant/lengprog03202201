@@ -26,8 +26,13 @@ class Persona extends Model
     protected $fillable = ['NroIdentificacion', 'apellidos', 'nombres'];
 
 
+    public function getNombreCompletoAttribute()
+    {
+        return $this->nombres . ' ' . $this->apellidos;
+    }
+
     public function casas()
     {
-        return $this->hasMany(Casas::class);
+        return $this->hasMany(Casa::class, 'tblpersona_id');
     }
 }

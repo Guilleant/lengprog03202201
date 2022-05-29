@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\CasaController;
+use App\Http\Controllers\FormaPagoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,5 @@ Route::get('/', function () {
 
 
 Route::resource( 'persona', PersonaController::class );
+Route::resource( 'casa', CasaController::class );
+Route::resource( 'formapago', FormaPagoController::class );

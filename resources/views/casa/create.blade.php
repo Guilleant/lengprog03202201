@@ -8,41 +8,38 @@
 
     <div class="card" style="width: 100%;">
         <div class="card-body">
-            <h5 class="card-title">Crear Personas</h5>
+            <h5 class="card-title">Crear Casas</h5>
 
-            <form action="{{ route('persona.store') }}" method="POST">
+            <form action="{{ route('casa.store') }}" method="POST">
                 @csrf
 
                 <div class="row">
                     <div class="col-md-6">
-                        <label>Nro Identificacion</label>
-                        <input name="nroIdentificacion" type="text" class="form-control"/>
+                        <label>Propietario</label>
+                        <select name="tblpersona_id" class="form-control" >
+                            @foreach ( $personas as $llave => $valor )
+                                <option value={{ $llave }}>{{ $valor }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
-                        <label>Apellidos</label>
-                        <input name="apellidos" type="text" class="form-control" />
+                        <label>Dirección</label>
+                        <input name="direccion" type="text" class="form-control" />
                     </div>
 
                     <div class="col-md-6">
-                        <label>Nombres</label>
-                        <input name="nombres" type="text" class="form-control"/>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Teléfono</label>
-                        <input name="telefono" type="text" class="form-control"/>
+                        <label>Barrio</label>
+                        <input name="barrio" type="text" class="form-control"/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary mt-5">Guardar</button>
-                        <a href="{{ route('persona.index') }}" class="btn btn-secondary mt-5">Cancelar</a>
+                        <a href="{{ route('casa.index') }}" class="btn btn-secondary mt-5">Cancelar</a>
                     </div>
                 </div>
             </form>
@@ -53,5 +50,5 @@
 @endsection
 
 @section('scriptsnavbar')
-    @include('layouts.scriptsnavbar')
+
 @endsection

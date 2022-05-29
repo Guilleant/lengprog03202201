@@ -17,15 +17,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <label>Propietario</label>
-                        <select name="tblpersona_id" class="form-control" >
-                            @foreach ( $personas as $llave => $valor )
-                                @if( $llave == $casa->tblpersona_id )
-                                <option value={{ $llave }} selected="selected">{{ $valor }}</option>
-                                @else
-                                    <option value={{ $llave }}>{{ $valor }}</option>
-                                @endif
-                            @endforeach
-                        </select>
+                        {!! Form::select('tblpersona_id', $personas, $casa->tblpersona_id, ['class' => 'form-control' ] ) !!}
                     </div>
                 </div>
 

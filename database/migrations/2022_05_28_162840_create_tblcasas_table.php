@@ -18,10 +18,12 @@ class CreateTblcasasTable extends Migration
             $table->bigInteger('tblpersona_id')->unsigned();
             $table->string('direccion');
             $table->string('barrio');
+            $table->bigInteger('tblformapago_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('tblpersona_id')->references('id')->on('tblpersonas');
+            $table->foreign('tblformapago_id')->references('id')->on('tblformapagos');
         });
     }
 

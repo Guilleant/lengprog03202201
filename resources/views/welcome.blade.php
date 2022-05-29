@@ -9,5 +9,5 @@
 @endsection
 
 @section('scriptsnavbar')
-    @include('layouts.scriptsnavbar')
+
 @endsection
